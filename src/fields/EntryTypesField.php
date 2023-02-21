@@ -58,7 +58,7 @@ class EntryTypesField extends BasePluginField
      */
     public function normalizeValue(mixed $value, ?ElementInterface $element = null): mixed
     {
-        if ($value === null || $value instanceof EntryTypesCollection) {
+        if ($value instanceof EntryTypesCollection) {
             return $value;
         }
 
@@ -67,7 +67,7 @@ class EntryTypesField extends BasePluginField
         }
 
         if (empty($value)) {
-            return null;
+            return EntryTypesCollection::make([]);
         }
 
         $fieldEntryTypes = array_filter(
