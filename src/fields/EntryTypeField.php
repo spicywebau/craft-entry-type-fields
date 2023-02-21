@@ -1,6 +1,6 @@
 <?php
 
-namespace spicyweb\entrytypesfield\fields;
+namespace spicyweb\entrytypefields\fields;
 
 use Craft;
 use craft\base\ElementInterface;
@@ -11,7 +11,7 @@ use craft\models\EntryType;
 /**
  * Entry Type field type class.
  *
- * @package spicyweb\entrytypesfield\fields
+ * @package spicyweb\entrytypefields\fields
  * @author Spicy Web <plugins@spicyweb.com.au>
  * @since 1.0.0
  */
@@ -22,7 +22,7 @@ class EntryTypeField extends BasePluginField
      */
     public static function displayName(): string
     {
-        return Craft::t('entry-types-field', 'Entry Type');
+        return Craft::t('entry-type-fields', 'Entry Type');
     }
 
     /**

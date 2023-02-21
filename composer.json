@@ -1,6 +1,6 @@
 {
-  "name": "spicyweb/craft-entry-types-field",
-  "description": "A Craft CMS field type for selecting entry types",
+  "name": "spicyweb/craft-entry-type-fields",
+  "description": "Craft CMS field types for selecting entry types",
   "version": "1.0.0",
   "type": "craft-plugin",
   "keywords": [
@@ -20,21 +20,21 @@
     "php": "^8.0.2"
   },
   "support": {
-    "issues": "https://github.com/spicywebau/craft-entry-types-field/issues",
-    "source": "https://github.com/spicywebau/craft-entry-types-field",
-    "rss": "https://github.com/spicywebau/craft-entry-types-field/commits/1.x.atom"
+    "issues": "https://github.com/spicywebau/craft-entry-type-fields/issues",
+    "source": "https://github.com/spicywebau/craft-entry-type-fields",
+    "rss": "https://github.com/spicywebau/craft-entry-type-fields/commits/1.x.atom"
   },
   "autoload": {
     "psr-4": {
-      "spicyweb\\entrytypesfield\\": "src/"
+      "spicyweb\\entrytypefields\\": "src/"
     }
   },
   "extra": {
-    "handle": "entry-types-field",
-    "name": "Entry Types Field",
-    "class": "spicyweb\\entrytypesfield\\Plugin",
-    "changelogUrl": "https://github.com/spicywebau/craft-entry-types-field/blob/1.x/CHANGELOG.md",
-    "downloadUrl": "https://github.com/spicywebau/craft-entry-types-field/archive/refs/tags/1.0.0.zip"
+    "handle": "entry-type-fields",
+    "name": "Entry Type Fields",
+    "class": "spicyweb\\entrytypefields\\Plugin",
+    "changelogUrl": "https://github.com/spicywebau/craft-entry-type-fields/blob/1.x/CHANGELOG.md",
+    "downloadUrl": "https://github.com/spicywebau/craft-entry-type-fields/archive/refs/tags/1.0.0.zip"
   },
   "config": {
     "allow-plugins": {

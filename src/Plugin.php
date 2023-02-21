@@ -1,18 +1,18 @@
 <?php
 
-namespace spicyweb\entrytypesfield;
+namespace spicyweb\entrytypefields;
 
 use craft\base\Plugin as BasePlugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
-use spicyweb\entrytypesfield\fields\EntryTypeField;
-use spicyweb\entrytypesfield\fields\EntryTypesField;
+use spicyweb\entrytypefields\fields\EntryTypeField;
+use spicyweb\entrytypefields\fields\EntryTypesField;
 use yii\base\Event;
 
 /**
- * Main Entry Types Field plugin class.
+ * Main Entry Type Fields plugin class.
  *
- * @package spicyweb\entrytypesfield
+ * @package spicyweb\entrytypefields
  * @author Spicy Web <plugins@spicyweb.com.au>
  * @since 1.0.0
  */

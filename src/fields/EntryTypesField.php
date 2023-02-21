@@ -1,18 +1,18 @@
 <?php
 
-namespace spicyweb\entrytypesfield\fields;
+namespace spicyweb\entrytypefields\fields;
 
 use Craft;
 use craft\base\ElementInterface;
 use craft\helpers\Cp;
 use craft\helpers\Json as JsonHelper;
 use craft\models\EntryType;
-use spicyweb\entrytypesfield\collections\EntryTypesCollection;
+use spicyweb\entrytypefields\collections\EntryTypesCollection;
 
 /**
  * Entry Types field type class.
  *
- * @package spicyweb\entrytypesfield\fields
+ * @package spicyweb\entrytypefields\fields
  * @author Spicy Web <plugins@spicyweb.com.au>
  * @since 1.0.0
  */
@@ -23,7 +23,7 @@ class EntryTypesField extends BasePluginField
      */
     public static function displayName(): string
     {
-        return Craft::t('entry-types-field', 'Entry Types');
+        return Craft::t('entry-type-fields', 'Entry Types');
     }
 
     /**

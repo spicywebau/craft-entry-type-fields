@@ -1,6 +1,6 @@
 <?php
 
-namespace spicyweb\entrytypesfield\fields;
+namespace spicyweb\entrytypefields\fields;
 
 use Craft;
 use craft\base\Field;
@@ -11,7 +11,7 @@ use craft\models\EntryType;
 /**
  * Base class for the plugin's field types.
  *
- * @package spicyweb\entrytypesfield\fields
+ * @package spicyweb\entrytypefields\fields
  * @author Spicy Web <plugins@spicyweb.com.au>
  * @since 1.0.0
  */
@@ -39,8 +39,8 @@ abstract class BasePluginField extends Field implements PreviewableFieldInterfac
     public function getSettingsHtml(): ?string
     {
         return Cp::checkboxSelectFieldHtml([
-            'label' => Craft::t('entry-types-field', 'Allowed Entry Types'),
-            'instructions' => Craft::t('entry-types-field', 'Which entry types can be selected with this field.'),
+            'label' => Craft::t('entry-type-fields', 'Allowed Entry Types'),
+            'instructions' => Craft::t('entry-type-fields', 'Which entry types can be selected with this field.'),
             'id' => 'allowedEntryTypes',
             'name' => 'allowedEntryTypes',
             'options' => array_map(

@@ -1,13 +1,13 @@
 <?php
 
-namespace spicyweb\entrytypesfield\collections;
+namespace spicyweb\entrytypefields\collections;
 
 use Illuminate\Support\Collection;
 
 /**
  * A Collection containing entry types.
  *
- * @package spicyweb\entrytypesfield\collections
+ * @package spicyweb\entrytypefields\collections
  * @author Spicy Web <plugins@spicyweb.com.au>
  * @since 1.0.0
  */
