@@ -20,6 +20,7 @@ Accessing an entry type field value in a template will return either the selecte
 
 An entry types field's value is a [collection](https://laravel.com/docs/9.x/collections) of the selected entry types.
 
+```twig
 {% if not entry.entryTypesField.isEmpty() %}
     <p>Selected entry types:</p>
     <ul>
@@ -30,6 +31,7 @@ An entry types field's value is a [collection](https://laravel.com/docs/9.x/coll
 {% else %}
     <p>No entry types were selected.</p>
 {% endif %}
+```
 
 ## Installation
 
