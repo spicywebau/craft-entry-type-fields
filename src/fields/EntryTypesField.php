@@ -84,6 +84,6 @@ class EntryTypesField extends BasePluginField
      */
     public function serializeValue(mixed $value, ?ElementInterface $element = null): mixed
     {
-        return $value?->ids();
+        return $value?->ids()->all();
     }
 }
