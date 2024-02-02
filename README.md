@@ -53,7 +53,7 @@ Then open your project's control panel, navigate to Settings &rarr; Plugins, fin
 
 ## Requirements
 
-Entry Type Fields 1.x requires Craft CMS 4.4.0 or any later Craft CMS 4 release.
+Entry Type Fields 2.x requires Craft CMS 5.
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "spicyweb/craft-entry-type-fields",
   "description": "Craft CMS field types for selecting entry types",
-  "version": "1.0.0",
+  "version": "2.0.0-beta.1",
   "type": "craft-plugin",
   "keywords": [
     "cms",
@@ -22,7 +22,7 @@
   "support": {
     "issues": "https://github.com/spicywebau/craft-entry-type-fields/issues",
     "source": "https://github.com/spicywebau/craft-entry-type-fields",
-    "rss": "https://github.com/spicywebau/craft-entry-type-fields/commits/1.x.atom"
+    "rss": "https://github.com/spicywebau/craft-entry-type-fields/commits/2.x.atom"
   },
   "autoload": {
     "psr-4": {
@@ -33,8 +33,8 @@
     "handle": "entry-type-fields",
     "name": "Entry Type Fields",
     "class": "spicyweb\\entrytypefields\\Plugin",
-    "changelogUrl": "https://github.com/spicywebau/craft-entry-type-fields/blob/1.x/CHANGELOG.md",
-    "downloadUrl": "https://github.com/spicywebau/craft-entry-type-fields/archive/refs/tags/1.0.0.zip"
+    "changelogUrl": "https://github.com/spicywebau/craft-entry-type-fields/blob/2.x/CHANGELOG.md",
+    "downloadUrl": "https://github.com/spicywebau/craft-entry-type-fields/archive/refs/tags/2.0.0-beta.1.zip"
   },
   "config": {
     "allow-plugins": {
