@@ -36,14 +36,14 @@ class EntryTypeField extends BasePluginField
             'options' => array_merge([[
                 'label' => '',
                 'value' => null,
-            ]], $this->getEntryTypesInputData()),
+            ]], $this->_getEntryTypesInputData()),
         ]);
     }
 
     /**
      * @inheritdoc
      */
-    public function getTableAttributeHtml(mixed $value, ElementInterface $element): string
+    public function getPreviewHtml(mixed $value, ElementInterface $element): string
     {
         return $value instanceof EntryType ? $value->name : '';
     }
@@ -70,7 +70,7 @@ class EntryTypeField extends BasePluginField
             return $value;
         }
 
-        return $value !== null ? Craft::$app->getSections()->getEntryTypeById($value) : null;
+        return $value !== null ? Craft::$app->getEntries()->getEntryTypeById($value) : null;
     }
 
     /**
@@ -80,5 +80,15 @@ class EntryTypeField extends BasePluginField
     {
         // Return the ID in an array, in case the field is converted to an entry types field in the future
         return $value !== null ? [$value->id] : null;
+    }
+
+    private function _getEntryTypesInputData() {
+        return array_map(
+            fn($entryType) => [
+                'label' => $entryType->name,
+                'value' => $entryType->id,
+            ],
+            $this->getAllowedEntryTypes()
+        );
     }
 }

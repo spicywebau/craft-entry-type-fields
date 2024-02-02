@@ -4,6 +4,7 @@ namespace spicyweb\entrytypefields\fields;
 
 use Craft;
 use craft\base\ElementInterface;
+use craft\helpers\ArrayHelper;
 use craft\helpers\Cp;
 use craft\helpers\Json as JsonHelper;
 use craft\models\EntryType;
@@ -31,17 +32,17 @@ class EntryTypesField extends BasePluginField
      */
     public function getInputHtml(mixed $value, ?ElementInterface $element = null): string
     {
-        return Craft::$app->getView()->renderTemplate('_includes/forms/multiselect', [
-            'name' => $this->handle,
-            'values' => $value?->ids() ?? [],
-            'options' => $this->getEntryTypesInputData(),
+        return Cp::entryTypeSelectHtml([
+            'name' => $this->handle . '[]',
+            'values' => $value?->all() ?? [],
+            'options' => $this->getAllowedEntryTypes(),
         ]);
     }
 
     /**
      * @inheritdoc
      */
-    public function getTableAttributeHtml(mixed $value, ElementInterface $element): string
+    public function getPreviewHtml(mixed $value, ElementInterface $element): string
     {
         if (!$value instanceof EntryTypesCollection) {
             return '';
@@ -70,11 +71,11 @@ class EntryTypesField extends BasePluginField
             return EntryTypesCollection::make([]);
         }
 
-        $fieldEntryTypes = array_filter(
-            Craft::$app->getSections()->getAllEntryTypes(),
-            fn($entryType) => in_array($entryType->id, $value)
-        );
-        $fieldEntryTypes = array_values($fieldEntryTypes);
+        $allEntryTypes = ArrayHelper::index(Craft::$app->getEntries()->getAllEntryTypes(), 'id');
+        $fieldEntryTypes = array_values(array_filter(array_map(
+            fn($id) => $allEntryTypes[$id] ?? null,
+            $value
+        )));
 
         return EntryTypesCollection::make($fieldEntryTypes);
     }

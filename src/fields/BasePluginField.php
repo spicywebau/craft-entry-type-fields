@@ -25,6 +25,14 @@ abstract class BasePluginField extends Field implements PreviewableFieldInterfac
     /**
      * @inheritdoc
      */
+    public static function icon(): string
+    {
+        return 'files';
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function settingsAttributes(): array
     {
         $attributes = parent::settingsAttributes();
@@ -45,10 +53,10 @@ abstract class BasePluginField extends Field implements PreviewableFieldInterfac
             'name' => 'allowedEntryTypes',
             'options' => array_map(
                 fn($entryType) => [
-                    'label' => $this->_entryTypeLabel($entryType),
+                    'label' => $entryType->name,
                     'value' => 'entryType:' . $entryType->uid,
                 ],
-                Craft::$app->getSections()->getAllEntryTypes()
+                Craft::$app->getEntries()->getAllEntryTypes()
             ),
             'values' => $this->allowedEntryTypes,
             'showAllOption' => true,
@@ -56,35 +64,22 @@ abstract class BasePluginField extends Field implements PreviewableFieldInterfac
     }
 
     /**
-     * Gets the input field data for this plugin's field types.
+     * Gets the allowed entry types for this plugin's field types.
      *
      * @return array
      */
-    protected function getEntryTypesInputData(): array
+    protected function getAllowedEntryTypes(): array
     {
         $options = [];
 
-        foreach (Craft::$app->getSections()->getAllEntryTypes() as $entryType) {
+        foreach (Craft::$app->getEntries()->getAllEntryTypes() as $entryType) {
             $entryTypeSource = 'entryType:' . $entryType->uid;
 
             if (!is_array($this->allowedEntryTypes) || in_array($entryTypeSource, $this->allowedEntryTypes)) {
-                $options[] = [
-                    'label' => $this->_entryTypeLabel($entryType),
-                    'value' => $entryType->id,
-                ];
+                $options[] = $entryType;
             }
         }
 
         return $options;
-    }
-
-    /**
-     * Gets the label to use for an entry type.
-     *
-     * @return string
-     */
-    private function _entryTypeLabel(EntryType $entryType): string
-    {
-        return $entryType->getSection()->name . ' - ' . $entryType->name;
     }
 }
